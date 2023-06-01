@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import MovieCard from "../MovieCard/MovieCard";
+import ShowCard from "../ShowCard/ShowCard";
 
 const Home = () => {
   const [movies, setMovies] = useState([]);
@@ -11,11 +11,11 @@ const Home = () => {
 
   return (
     <div className="container my-5">
-      <h3 className="text-center">Watch Your Favorite Movies</h3>
+      <h3 className="text-center">Watch Your Favorite Shows</h3>
       <div className="my-4">
         <div className="row container justify-content-around gap-4">
           {movies.map((movie) => (
-            <MovieCard key={movie.show.id} movie={movie}></MovieCard>
+            <ShowCard key={movie.show.id} movie={movie}></ShowCard>
           ))}
         </div>
       </div>
