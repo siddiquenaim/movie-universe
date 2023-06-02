@@ -40,16 +40,35 @@ function ShowTicket() {
       <Form className="container my-4" onSubmit={handleBookShow}>
         <Form.Group className="mb-3" controlid="exampleForm.ControlInput1">
           <Form.Label>Your Name</Form.Label>
-          <Form.Control required type="text" placeholder="Your Name" />
+          <Form.Control
+            className="mb-2"
+            required
+            type="text"
+            placeholder="Your Name"
+          />
 
           <Form.Label>Your email address</Form.Label>
-          <Form.Control required type="email" placeholder="name@example.com" />
+          <Form.Control
+            className="mb-2"
+            required
+            type="email"
+            placeholder="name@example.com"
+          />
 
           <Form.Label>Your Phone Number</Form.Label>
-          <Form.Control required type="number" minLength={10} />
+          <Form.Control
+            className="mb-2"
+            required
+            type="number"
+            minLength={10}
+          />
 
           <Form.Label>Movie Name</Form.Label>
-          <Form.Control disabled defaultValue={show?.show?.name} />
+          <Form.Control
+            className="mb-2"
+            disabled
+            defaultValue={show?.show?.name}
+          />
         </Form.Group>
 
         <Form.Group className="text-center">
