@@ -6,6 +6,8 @@ import Home from "./components/Home/Home";
 import ShowDetails from "./components/ShowDetails/ShowDetails";
 import MainLayout from "./layout/MainLayout/MainLayout";
 import ShowTicket from "./components/ShowTicket/ShowTicket";
+import BookedMovies from "./components/BookedMovies/BookedMovies";
+import bookedMoviesLoader from "./components/BookedMovies/getBookedMovies";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +27,11 @@ const router = createBrowserRouter([
         path: "/show-ticket/:id",
         element: <ShowTicket></ShowTicket>,
         loader: () => fetch("https://api.tvmaze.com/search/shows?q=all"),
+      },
+      {
+        path: "/booked-movies",
+        element: <BookedMovies></BookedMovies>,
+        loader: bookedMoviesLoader,
       },
     ],
   },

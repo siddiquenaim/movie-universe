@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import Form from "react-bootstrap/Form";
 import { useLoaderData, useParams } from "react-router-dom";
+import { bookShow } from "../../utilities/localStorage";
+import Swal from "sweetalert2";
 
 function ShowTicket() {
   const [show, setShow] = useState({});
@@ -16,21 +18,40 @@ function ShowTicket() {
       }
     }
   }, [id, allShows]);
+
+  const handleBookShow = (event) => {
+    event.preventDefault();
+    bookShow(id.id);
+    Swal.fire({
+      position: "center",
+      icon: "success",
+      title: "Ticket has been booked successfully",
+      showConfirmButton: false,
+      timer: 1500,
+    });
+  };
+
   return (
     <div className="container">
       <h2 className="text-center my-4">
         Book your ticket for {show?.show?.name}
       </h2>
 
-      <Form className="container">
-        <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+      <Form className="container" onSubmit={handleBookShow}>
+        <Form.Group className="mb-3" controlid="exampleForm.ControlInput1">
+          <Form.Label>Your Name</Form.Label>
+          <Form.Control required type="text" placeholder="Your Name" />
+
           <Form.Label>Your email address</Form.Label>
           <Form.Control required type="email" placeholder="name@example.com" />
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+
+          <Form.Label>Your Phone Number</Form.Label>
+          <Form.Control required type="number" minLength={10} />
+
           <Form.Label>Movie Name</Form.Label>
-          <Form.Control value={show?.show?.name} rows={3} />
+          <Form.Control disabled defaultValue={show?.show?.name} />
         </Form.Group>
+
         <Form.Group className="text-center">
           <Form.Control
             className="btn btn-danger fw-bold text-center"
