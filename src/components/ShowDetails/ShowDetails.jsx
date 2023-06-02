@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
 import { Link, useLoaderData, useParams } from "react-router-dom";
 import "./ShowDetails.css";
+import ScrollToTop from "react-scroll-to-top";
 
 const ShowDetails = () => {
   const [show, setShow] = useState({});
@@ -18,7 +19,10 @@ const ShowDetails = () => {
     }
   }, [id, allShows]);
 
-  console.log(show);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="container my-4">
       <h2 className="text-center my-4">{show?.show?.name}</h2>
@@ -47,6 +51,7 @@ const ShowDetails = () => {
               <Button variant="danger">Book Movie Ticket</Button>
             </Link>
           </div>
+          <ScrollToTop top smooth />
         </div>
       </div>
     </div>

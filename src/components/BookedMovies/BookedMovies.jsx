@@ -3,7 +3,6 @@ import { useLoaderData } from "react-router-dom";
 
 const BookedMovies = () => {
   const movies = useLoaderData();
-  console.log(movies);
   return (
     <div className="container my-4">
       <h2 className="text-center my-4">Your Booked Movies</h2>
