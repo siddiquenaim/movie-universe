@@ -5,9 +5,9 @@ import { Link } from "react-router-dom";
 const ShowCard = ({ movie }) => {
   const { show } = movie;
   return (
-    <Card className="col-md-3 bg-white" style={{ width: "full" }}>
+    <Card className="col-md-3 bg-white p-0" style={{ width: "full" }}>
       <Card.Img variant="top" src={show.image.medium} />
-      <Card.Body>
+      <Card.Body className="p-4">
         <div className="mb-3">
           <Card.Title>{show.name}</Card.Title>
           <Card.Text>

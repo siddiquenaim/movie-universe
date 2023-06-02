@@ -37,7 +37,7 @@ function ShowTicket() {
         Book your ticket for {show?.show?.name}
       </h2>
 
-      <Form className="container" onSubmit={handleBookShow}>
+      <Form className="container my-4" onSubmit={handleBookShow}>
         <Form.Group className="mb-3" controlid="exampleForm.ControlInput1">
           <Form.Label>Your Name</Form.Label>
           <Form.Control required type="text" placeholder="Your Name" />

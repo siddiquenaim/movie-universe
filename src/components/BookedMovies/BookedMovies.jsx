@@ -1,5 +1,4 @@
 import Table from "react-bootstrap/Table";
-import { getBookedShows } from "../../utilities/localStorage";
 import { useLoaderData } from "react-router-dom";
 
 const BookedMovies = () => {
@@ -23,7 +22,11 @@ const BookedMovies = () => {
               <td>{i + 1}</td>
               <td>{movie?.show?.name}</td>
               <td>{movie?.show?.schedule?.days}</td>
-              <td>{movie?.show?.schedule?.time}</td>
+              <td>
+                {movie?.show?.schedule?.time
+                  ? movie?.show?.schedule?.time
+                  : "Not decided yet"}
+              </td>
             </tr>
           ))}
         </tbody>
