@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const ShowCard = ({ movie }) => {
   const { show } = movie;
   return (
-    <Card className="col-md-3" style={{ width: "full" }}>
+    <Card className="col-md-3 bg-white" style={{ width: "full" }}>
       <Card.Img variant="top" src={show.image.medium} />
       <Card.Body>
         <div className="mb-3">
@@ -21,8 +21,12 @@ const ShowCard = ({ movie }) => {
             ))}
           </Card.Text>
         </div>
-        <Card.Text>Rating: {show.rating.average}</Card.Text>
-        <Card.Text>Language: {show.language}</Card.Text>
+        <Card.Text>
+          Language: <span className="fw-bold">{show?.rating?.average}</span>
+        </Card.Text>
+        <Card.Text>
+          Language: <span className="fw-bold">{show?.language}</span>
+        </Card.Text>
         <Link to={`shows/${show.id}`}>
           <Button variant="danger">View Details</Button>
         </Link>

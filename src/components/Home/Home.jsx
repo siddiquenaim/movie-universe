@@ -10,8 +10,8 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="container my-5">
-      <h3 className="text-center">Watch Your Favorite Shows</h3>
+    <div className="container py-5">
+      <h3 className="text-center fs-1 mb-5">Watch Your Favorite Shows</h3>
       <div className="my-4">
         <div className="row container justify-content-around gap-4">
           {movies.map((movie) => (

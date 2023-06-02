@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./components/Home/Home";
 import ShowDetails from "./components/ShowDetails/ShowDetails";
 import MainLayout from "./layout/MainLayout/MainLayout";
+import ShowTicket from "./components/ShowTicket/ShowTicket";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,11 @@ const router = createBrowserRouter([
       {
         path: "/shows/:id",
         element: <ShowDetails></ShowDetails>,
+        loader: () => fetch("https://api.tvmaze.com/search/shows?q=all"),
+      },
+      {
+        path: "/show-ticket/:id",
+        element: <ShowTicket></ShowTicket>,
         loader: () => fetch("https://api.tvmaze.com/search/shows?q=all"),
       },
     ],
